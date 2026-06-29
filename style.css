@@ -1,0 +1,463 @@
+/* --- Core Engine Setup --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace, sans-serif;
+}
+
+body {
+    background-color: #030708;
+    color: #e2e8f0;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* --- Fixed Backdrop Matrix (Using me.jpg with deep technological overlay) --- */
+.space-matrix-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(3, 7, 8, 0.94), rgba(3, 7, 8, 0.97)), url('me.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: -2;
+}
+
+/* --- Sharp Tech Header Assembly --- */
+.app-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 5%;
+    background: rgba(3, 7, 8, 0.95);
+    border-bottom: 2px solid #00ff66;
+    box-shadow: 0 4px 20px rgba(0, 255, 102, 0.05);
+    z-index: 500;
+}
+
+.terminal-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+.accent-terminal {
+    color: #00ff66;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 1.2rem;
+}
+
+.menu-link {
+    text-decoration: none;
+    color: #94a3b8;
+    font-size: 0.85rem;
+    font-weight: bold;
+    transition: all 0.2s ease;
+    padding: 0.2rem 0.5rem;
+    border: 1px solid transparent;
+}
+
+.menu-link:hover, .menu-link.active {
+    color: #00ff66;
+    border: 1px solid rgba(0, 255, 102, 0.3);
+    background: rgba(0, 255, 102, 0.02);
+}
+
+/* --- Structural Content Hub --- */
+.view-viewport {
+    max-width: 1200px;
+    margin: 140px auto 80px auto;
+    padding: 0 2.5rem;
+}
+
+.view-panel {
+    display: none;
+    animation: terminalRender 0.4s steps(20, end) forwards;
+}
+
+.view-panel.active-panel {
+    display: block;
+}
+
+@keyframes terminalRender {
+    from { opacity: 0; transform: scale(0.99); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* --- Typography Matrix --- */
+.panel-heading {
+    font-size: 1.8rem;
+    color: #ffffff;
+    margin-bottom: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: inline-block;
+    border-right: 3px solid #00ff66;
+    padding-right: 10px;
+}
+
+/* --- Button Systems --- */
+.action-trigger {
+    display: inline-block;
+    padding: 0.75rem 1.6rem;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.mechanical-btn {
+    background: #00ff66;
+    color: #030708;
+    border: 2px solid #00ff66;
+}
+
+.mechanical-btn:hover {
+    background: transparent;
+    color: #00ff66;
+    box-shadow: 0 0 15px rgba(0, 255, 102, 0.4);
+}
+
+.structural-link {
+    background: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    margin-left: 1.2rem;
+}
+
+.structural-link:hover {
+    border-color: #00ff66;
+    color: #00ff66;
+}
+
+.static-btn {
+    margin-top: 1.5rem;
+}
+
+/* --- Home Layout View --- */
+.showcase-element {
+    min-height: 55vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.bracket-tag {
+    color: #00ff66;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.glitch-name {
+    font-size: 3.5rem;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    letter-spacing: -1px;
+}
+
+.summary-line {
+    font-size: 1.2rem;
+    color: #94a3b8;
+    max-width: 650px;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+}
+
+/* --- Profile Split Layout --- */
+.profile-split {
+    display: grid;
+    grid-template-columns: 1fr 1.8fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.frame-container {
+    width: 100%;
+    border: 1px solid #94a3b8;
+    padding: 10px;
+    background: rgba(255,255,255,0.01);
+}
+
+.profile-graphic {
+    width: 100%;
+    display: block;
+    filter: grayscale(100%) contrast(110%);
+}
+
+.profile-narrative p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #cbd5e1;
+    margin-bottom: 1.5rem;
+}
+
+/* --- Academic Layout --- */
+.academic-timeline {
+    border-left: 1px dashed rgba(148, 163, 184, 0.4);
+    padding-left: 2rem;
+}
+
+.academic-node {
+    background: rgba(15, 23, 42, 0.6);
+    padding: 2rem;
+    border: 1px solid rgba(148, 163, 184, 0.1);
+    position: relative;
+}
+
+.node-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.status-pill {
+    font-size: 0.75rem;
+    background: rgba(0, 255, 102, 0.1);
+    color: #00ff66;
+    padding: 0.2rem 0.6rem;
+    border: 1px solid #00ff66;
+}
+
+.university-title {
+    color: #ffffff;
+    margin: 0.4rem 0;
+    font-weight: bold;
+}
+
+.session-tracker {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    margin-bottom: 1.2rem;
+}
+
+.curriculum-focus {
+    line-height: 1.7;
+    color: #cbd5e1;
+}
+
+/* --- Skills Layout Architecture --- */
+.descriptor-text {
+    color: #94a3b8;
+    margin-bottom: 2.5rem;
+}
+
+.metrics-suite {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.metric-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 0.6rem;
+}
+
+.metric-rail {
+    width: 100%;
+    height: 4px;
+    background: #1e293b;
+}
+
+.metric-core {
+    height: 100%;
+    background: #00ff66;
+    box-shadow: 0 0 8px #00ff66;
+}
+
+/* --- Production Logs --- */
+.log-entry {
+    background: rgba(15, 23, 42, 0.6);
+    padding: 2.5rem;
+    border: 1px solid rgba(148, 163, 184, 0.15);
+}
+
+.entry-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: #94a3b8;
+    margin-bottom: 1rem;
+}
+
+.stack-tags {
+    color: #00ff66;
+    font-size: 0.8rem;
+    margin: 0.5rem 0 1.5rem 0;
+}
+
+.entry-desc {
+    line-height: 1.8;
+    color: #cbd5e1;
+}
+
+/* --- Verification Framework --- */
+.verification-wrapper {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 3.5rem;
+    align-items: center;
+}
+
+.document-render {
+    width: 100%;
+    border: 1px solid rgba(148, 163, 184, 0.3);
+}
+
+.credential-authority {
+    color: #00ff66;
+    font-size: 0.85rem;
+    margin: 0.4rem 0 1.2rem 0;
+}
+
+.credential-scope {
+    line-height: 1.7;
+    color: #cbd5e1;
+}
+
+/* --- System Infrastructure Grid --- */
+.infrastructure-matrix {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.infra-block {
+    background: rgba(15, 23, 42, 0.5);
+    padding: 2rem 1.5rem;
+    border-top: 2px solid #94a3b8;
+}
+
+.infra-block:hover {
+    border-top-color: #00ff66;
+}
+
+.block-category {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 0.6rem;
+}
+
+.block-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* --- Philosophy Layout --- */
+.manifesto-quote {
+    font-size: 1.4rem;
+    line-height: 1.7;
+    color: #00ff66;
+    margin-bottom: 2rem;
+    border-left: 2px solid #00ff66;
+    padding-left: 1.5rem;
+}
+
+.manifesto-body {
+    line-height: 1.8;
+    color: #cbd5e1;
+}
+
+/* --- Strategic Flow Vectors --- */
+.objectives-flow {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.flow-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    background: rgba(15, 23, 42, 0.4);
+    padding: 1.8rem;
+    border: 1px solid rgba(148, 163, 184, 0.08);
+}
+
+.flow-index {
+    color: #00ff66;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.flow-card p {
+    color: #cbd5e1;
+    line-height: 1.6;
+}
+
+/* --- Connect Infrastructure --- */
+.connect-prompt {
+    color: #94a3b8;
+    margin-bottom: 2rem;
+}
+
+.terminal-contact-card {
+    background: #0f172a;
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    padding: 2.5rem;
+    display: inline-block;
+    width: 100%;
+    max-width: 650px;
+}
+
+.terminal-line {
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+}
+
+.terminal-line:last-child {
+    margin-bottom: 0;
+}
+
+.t-label {
+    color: #94a3b8;
+    margin-right: 10px;
+}
+
+.t-value {
+    color: #00ff66;
+    text-decoration: none;
+}
+
+/* --- Media Queries --- */
+@media (max-width: 900px) {
+    .app-header {
+        flex-direction: column;
+        gap: 1.2rem;
+        padding: 1rem;
+    }
+    .nav-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.6rem;
+    }
+    .view-viewport {
+        margin-top: 220px;
+    }
+    .profile-split, .verification-wrapper {
+        grid-template-columns: 1fr;
+    }
+    .glitch-name {
+        font-size: 2.2rem;
+    }
+}
